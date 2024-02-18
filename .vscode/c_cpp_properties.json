@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "atmega2560-drivers",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/avr-gcc",
+            "cStandard": "c11",
+            "defines": ["DEBUG"],
+            "compilerArgs": [
+                "-mmcu=atmega2560",
+                "-DF_CPU=16000000L"
+            ],
+            "includePath": [
+                "/usr/avr/include"
+            ]
+        }
+    ],
+    "version": 4
+}
