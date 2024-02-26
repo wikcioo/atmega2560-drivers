@@ -15,7 +15,11 @@
                 "/usr/avr/include",
                 "/usr/include",
                 "/usr/include/c++/13.2.1",
-                "/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/"
+                "/usr/include/c++/13.2.1/x86_64-pc-linux-gnu/",
+                "/usr/lib/avr/include",
+                "/usr/include/c++/12",
+                "/usr/include/x86_64-linux-gnu",
+                "/usr/include/x86_64-linux-gnu/c++/12"
             ]
         }
     ],

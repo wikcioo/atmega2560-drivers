@@ -19,6 +19,9 @@ VENDOR_DIR      := vendor
 ifeq ($(dist), arch)
 	AVR_DIR := /usr/avr/include
 endif
+ifeq ($(dist), debian)
+	AVR_DIR := /usr/lib/avr/include
+endif
 
 # ======== C variables ========
 C_INCLUDES := -include vendor/forced_include.h -idirafter $(AVR_DIR)
