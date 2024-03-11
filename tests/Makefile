@@ -26,7 +26,7 @@ endif
 # ======== C variables ========
 C_INCLUDES := -include vendor/forced_include.h -idirafter $(AVR_DIR)
 C_FLAGS    := -c -std=gnu11 $(C_INCLUDES)
-C_FILES    := led_array.c
+C_FILES    := led_array.c switch.c
 C_SOURCES  := $(addprefix $(DRIVERS_SRC_DIR)/, $(C_FILES))
 C_SOURCES  += $(wildcard $(VENDOR_DIR)/*.c)
 OBJECTS    := $(addprefix $(OBJ_DIR)/, $(addsuffix .c.o, $(basename $(notdir $(C_SOURCES)))))
