@@ -34,3 +34,8 @@ void led_array_set(u8 led_no, u8 state);
  * @param led_no Led number. See #LED_NUMBERS for possible values
  */
 void led_array_toggle(u8 led_no);
+
+/*
+ * Clear all leds by turning them off
+ */
+void led_array_clear();

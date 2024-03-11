@@ -2,13 +2,13 @@
 
 #include <stdint.h>
 
-typedef unsigned char u8;
-typedef unsigned short u16;
+typedef uint8_t u8;
+typedef uint16_t u16;
 
-typedef signed char i8;
-typedef signed short i16;
+typedef int8_t i8;
+typedef int16_t i16;
 
-typedef char b8;
+typedef int8_t b8;
 
-#define TRUE 1
-#define FALSE 0
+#define true 1
+#define false 0
