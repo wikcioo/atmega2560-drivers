@@ -1,0 +1,11 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Start GDB Server",
+            "type": "shell",
+            "command": "avarice -4 -P atmega2560 -j usb :4242",
+            "isBackground": true
+        }
+    ]
+}
