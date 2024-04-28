@@ -24,7 +24,8 @@ CFLAGS  := -mmcu=$(MCU) -c -std=gnu11 -DF_CPU=$(CPU_SPEED) $(WARNINGS) $(INC_DIR
 LDFLAGS := -mmcu=$(MCU)
 
 SOURCES := $(wildcard $(FIRMWARE_SRC_DIR)/*.c)
-SOURCES += $(wildcard $(DRIVERS_SRC_DIR)/*.c)
+SOURCES += $(wildcard $(DRIVERS_SRC_DIR)/hal/*.c)
+SOURCES += $(wildcard $(DRIVERS_SRC_DIR)/bsp/*.c)
 OBJECTS := $(addprefix $(OBJ_DIR)/, $(addsuffix .c.o, $(basename $(notdir $(SOURCES)))))
 
 ifeq ($(config), debug)
@@ -48,7 +49,10 @@ $(BIN_DIR)/$(FIRMWARE_NAME).elf: $(OBJECTS)
 $(OBJ_DIR)/%.c.o: $(FIRMWARE_SRC_DIR)/%.c
 	$(CC) $^ $(CFLAGS) -o $@
 
-$(OBJ_DIR)/%.c.o: $(DRIVERS_SRC_DIR)/%.c
+$(OBJ_DIR)/%.c.o: $(DRIVERS_SRC_DIR)/hal/%.c
+	$(CC) $^ $(CFLAGS) -o $@
+
+$(OBJ_DIR)/%.c.o: $(DRIVERS_SRC_DIR)/bsp/%.c
 	$(CC) $^ $(CFLAGS) -o $@
 
 flash: $(BIN_DIR)/$(FIRMWARE_NAME).hex

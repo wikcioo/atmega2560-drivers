@@ -3,7 +3,7 @@
 extern "C"
 {
 #include <avr/io.h>
-#include <led_array.h>
+#include <hal/led_array.h>
 }
 
 class LedArrayTestFixture : public ::testing::Test

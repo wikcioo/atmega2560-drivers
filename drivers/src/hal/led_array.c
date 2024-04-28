@@ -30,6 +30,22 @@ void led_array_toggle(u8 led_no)
     PORTA ^= (1 << led_no);
 }
 
+void led_array_bar(u8 number)
+{
+    // Sanitize input
+    if (number < LED1 || number > LED_LAST) {
+        return;
+    }
+
+    // Turn off all leds
+    PORTA = 0xFF;
+
+    // Turn on the first number + 1 leds
+    for (u8 i = 0; i < number + 1; i++) {
+        PORTA &= ~(1 << i);
+    }
+}
+
 void led_array_clear()
 {
     // Set all bits to high, thus turning off all leds

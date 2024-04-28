@@ -1,0 +1,29 @@
+#include <gtest/gtest.h>
+#include "fff.h"
+
+DEFINE_FFF_GLOBALS
+
+extern "C"
+{
+#include <bsp/temperature.h>
+#include <hal/led_array.h>
+}
+
+FAKE_VOID_FUNC(led_array_set, u8, u8);
+
+class FooTestFixture : public ::testing::Test
+{
+protected:
+    void SetUp() override
+    {
+        RESET_FAKE(led_array_set);
+        FFF_RESET_HISTORY();
+    }
+};
+
+TEST_F(FooTestFixture, test_foo)
+{
+    ASSERT_EQ(1, led_array_set_fake.call_count);
+    ASSERT_EQ(LED1, led_array_set_fake.arg0_val);
+    ASSERT_EQ(LED_HIGH, led_array_set_fake.arg1_val);
+}

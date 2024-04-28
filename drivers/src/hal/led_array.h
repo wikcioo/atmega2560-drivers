@@ -36,6 +36,12 @@ void led_array_set(u8 led_no, u8 state);
 void led_array_toggle(u8 led_no);
 
 /*
+ * Turn on the first 'number' leds
+ * @param number Number of leds to turn on. See #LED_NUMBERS for possible values
+ */
+void led_array_bar(u8 number);
+
+/*
  * Clear all leds by turning them off
  */
 void led_array_clear();

@@ -12,6 +12,7 @@
             ],
             "includePath": [
                 "${workspaceFolder}/drivers/src",
+                "${workspaceFolder}/tests/vendor",
                 "/usr/avr/include",
                 "/usr/include",
                 "/usr/include/c++/13.2.1",

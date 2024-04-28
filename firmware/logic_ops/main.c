@@ -1,5 +1,5 @@
-#include "switch.h"
-#include "led_array.h"
+#include <hal/switch.h>
+#include <hal/led_array.h>
 
 int main()
 {
