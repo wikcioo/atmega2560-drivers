@@ -9,8 +9,8 @@
 #define SWITCH4 3
 #define SWITCH5 4
 #define SWITCH6 5
-#define SWITCH7 2
-#define SWITCH8 3
+#define SWITCH7 6
+#define SWITCH8 7
 
 // #SWITCH_STATES
 #define SWITCH_OFF 0

@@ -27,36 +27,37 @@ typedef struct matrix_desc
 **/
 
 /*
- *   Option 1: even pins
+ *   Option 2: odd pins
  *
- *   static const matrix_desc_t matrix[8] = {
- *       // cols
- *       { &DDRB, &PORTB, &PINB, PB7 },
- *       { &DDRB, &PORTB, &PINB, PB5 },
- *       { &DDRB, &PORTB, &PINB, PB4 },
- *       { &DDRE, &PORTE, &PINE, PE3 },
+ *    static const matrix_desc_t matrix[8] = {
+ *        // cols
+ *        { &DDRD, &PORTD, &PIND, PD7 },
+ *        { &DDRG, &PORTG, &PING, PG5 },
+ *        { &DDRB, &PORTB, &PINB, PB6 },
+ *        { &DDRH, &PORTH, &PINH, PH6 },
  *
- *       // rows
- *       { &DDRE, &PORTE, &PINE, PE5 },
- *       { &DDRH, &PORTH, &PINH, PH3 },
- *       { &DDRH, &PORTH, &PINH, PH5 },
- *       { &DDRL, &PORTL, &PINL, PL1 }
- *   };
+ *        // rows
+ *        { &DDRE, &PORTE, &PINE, PE4 },
+ *        { &DDRL, &PORTL, &PINL, PL0 },
+ *        { &DDRH, &PORTH, &PINH, PH4 },
+ *        { &DDRL, &PORTL, &PINL, PL2 }
+ *    };
+ *
 **/
 
-// Option 2: odd pins
+// Option 1: even pins
 static const matrix_desc_t matrix[8] = {
-    /* cols */
-    { &DDRD, &PORTD, &PIND, PD7 },
-    { &DDRG, &PORTG, &PING, PG5 },
-    { &DDRB, &PORTB, &PINB, PB6 },
-    { &DDRH, &PORTH, &PINH, PH6 },
+    // cols
+    { &DDRB, &PORTB, &PINB, PB7 },
+    { &DDRB, &PORTB, &PINB, PB5 },
+    { &DDRB, &PORTB, &PINB, PB4 },
+    { &DDRE, &PORTE, &PINE, PE3 },
 
-    /* rows */
-    { &DDRE, &PORTE, &PINE, PE4 },
-    { &DDRL, &PORTL, &PINL, PL0 },
-    { &DDRH, &PORTH, &PINH, PH4 },
-    { &DDRL, &PORTL, &PINL, PL2 }
+    // rows
+    { &DDRE, &PORTE, &PINE, PE5 },
+    { &DDRH, &PORTH, &PINH, PH3 },
+    { &DDRH, &PORTH, &PINH, PH5 },
+    { &DDRL, &PORTL, &PINL, PL1 }
 };
 
 static const i8 matrix_map[4][4] = {
@@ -103,5 +104,5 @@ i8 matrix_keyboard_getkey(void)
         *(matrix[row].port) |= _BV(matrix[row].bit);
     }
 
-    return -1;
+    return KEY_NOT_PRESSED;
 }
