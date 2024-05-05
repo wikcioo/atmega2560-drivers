@@ -1,5 +1,5 @@
-#include <hal/switch.h>
-#include <hal/led_array.h>
+#include <bsp/switch.h>
+#include <bsp/led_array.h>
 
 int main()
 {

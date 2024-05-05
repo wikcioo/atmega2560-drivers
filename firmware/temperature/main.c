@@ -1,7 +1,7 @@
 #include <util/delay.h>
 
 #include <bsp/temperature.h>
-#include <hal/led_array.h>
+#include <bsp/led_array.h>
 #include <bsp/display.h>
 
 #define TEMPERATURE_LOW_BAR 18

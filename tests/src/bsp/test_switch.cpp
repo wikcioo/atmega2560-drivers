@@ -3,7 +3,7 @@
 extern "C"
 {
 #include <avr/io.h>
-#include <hal/switch.h>
+#include <bsp/switch.h>
 }
 
 class SwitchTestFixture : public ::testing::Test

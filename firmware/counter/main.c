@@ -1,7 +1,7 @@
 #include <util/delay.h>
 
-#include <hal/switch.h>
-#include <hal/led_array.h>
+#include <bsp/switch.h>
+#include <bsp/led_array.h>
 
 void on_switch_pressed(b8 increment)
 {
