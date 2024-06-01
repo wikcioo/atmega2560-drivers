@@ -19,6 +19,9 @@ extern uint8_t __avr_reg[_HIGHEST_REGISTER_ADDR];
 }
 #endif
 
+extern uint8_t __avr_reg[_HIGHEST_REGISTER_ADDR];
+extern uint8_t __SREG;
+
 // Replace AVR registers with Array
 #define _SFR_MEM8(mem_addr) (*(uint8_t *)(&__avr_reg[mem_addr]))
 #define _SFR_IO8(io_addr) (*(uint8_t *)(&__avr_reg[io_addr]))

@@ -6,6 +6,7 @@ OUTPUT_FILENAME := gtests
 
 CC  := gcc
 CXX := g++
+CPU_SPEED := 16000000L
 
 # Directory variables
 BUILD_DIR := build
@@ -25,10 +26,10 @@ endif
 
 # ======== C variables ========
 C_INCLUDES  := -include vendor/forced_include.h -I$(DRIVERS_SRC_DIR) -idirafter $(AVR_DIR)
-C_FLAGS     := -c -std=gnu11 $(C_INCLUDES)
+C_FLAGS     := -c -std=gnu11 $(C_INCLUDES) -DF_CPU=$(CPU_SPEED)
 
 C_HAL_FILES :=
-C_BSP_FILES := led_array.c switch.c
+C_BSP_FILES := led_array.c switch.c temperature.c
 
 C_SOURCES     += $(wildcard $(VENDOR_DIR)/*.c)
 C_HAL_SOURCES := $(addprefix $(DRIVERS_SRC_DIR)/hal/, $(C_HAL_FILES))
